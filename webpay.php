@@ -5,6 +5,7 @@
   Author: Cristian Tala Sánchez
   Version: 2.1.3
   Author URI: www.cristiantala.cl
+  Plugin URI: https://bitbucket.org/ctala/woocommerce-webpay/wiki/Home
 
   This program is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
