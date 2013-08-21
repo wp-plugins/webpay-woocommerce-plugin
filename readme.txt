@@ -7,8 +7,10 @@ Contributors: Cristian Tala S.
 Tags: 
 
 Requires at least: 3, 3.3+ and WooCommerce 1.6+
+
 Tested up to: 3.6
-Stable tag: 2.1.4
+
+Stable tag: 2.1.5
 
 == Description ==
 
