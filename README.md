@@ -67,6 +67,8 @@ Una ves descargado el plugin hay dos cosas que tienes que tener en consideració
 
 4. La página usada por HTML_TR_NORMAL = http://DIRECCIONDETUPAGINA/?page_id=xt_compra&pay=webpay&wc-api=WC_Webpay
 
+5. Es necesario cambiar en la página de recepción del pedido [woocommerce-thankyou] por [webpay-thankyou]. 
+
 # Ejemplo **tbk_config.dat**. #
 
 OJO,PESTAÑA y CEJA. La configuración siguiente es para un ambiente de certificación.
@@ -93,6 +95,11 @@ HTML_TR_NORMAL =  http://DIRECCIONDETUPAGINA/?page_id=xt_compra&pay=webpay&wc-ap
 
 ```
 #CHANGELOG
+* V2.2 : Se establece el short-code [webpay-thankyou] para realizar las validaciones necesarias por parte de transbank. Es necesario cambiar en la página de recepción del pedido por [woocommerce-thankyou]. 
+* V2.1.9 : Se usa el estandar definido por woocommerce para los códigos de estado.
+* V2.1.8 : Arreglada posible duplicidad cuando la orden pasa a on-hold.
+* V2.1.7 : 
+* V2.1.6 : Modificado para que funcionara con versiones más antiguas de php.
 * V2.1.5 : Se cambian los permisos por defecto de la carpeta común. Con esto se deben asegurar que el usuario que ejecuta los CGI sea el mismo que crea los archivos.
 * V2.1.2 : Se externaliza la carpeta común al directorio de uploads. De esta manera no se borra la información al actualizar el plugin.
 * V2.1 : Se agregan las variables de la tienda en la configuración del plugin.
