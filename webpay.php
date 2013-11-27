@@ -3,7 +3,7 @@
   Plugin Name: Woocommerce Webpay ( Chilean Payment Gateway )
   Description: Sistema de pagos de WooCommerce con WebPay
   Author: Cristian Tala Sánchez
-  Version: 2.2
+  Version: 2.3
   Author URI: www.cristiantala.cl
   Plugin URI: https://bitbucket.org/ctala/woocommerce-webpay/wiki/Home
   This program is free software: you can redistribute it and/or modify
@@ -28,6 +28,8 @@ include_once 'admin/webpay_debug.php';
 register_activation_hook(__FILE__, 'webpay_install');
 add_action('plugins_loaded', 'init_woocommerce_webpay');
 add_shortcode('webpay_thankyou', 'webpayThankYou');
+
+
 
 
 
@@ -86,7 +88,16 @@ function webpayThankYou() {
                 if ($paymentMethod == "webpay") {
                     log_me("\t -> El pago de la orden fue con WebPay", $SUFIJO);
                     if ($order->status == "completed" || $order->status == "processing") {
-                        echo do_shortcode('[woocommerce_thankyou]');
+                        /*
+                         * Se carga el template del plugin para la página de éxito solo si es una compra con webpay
+                         */
+//                        echo "WEBPAY PAYMENT";
+                        include_once plugin_dir_path(__FILE__) . '/php/templates/thankyou.php';
+                        /*
+                         * Se incluyen los detalles de la orden incluyendo el precio unitario según es requerido por transbank
+                         */
+                        include_once plugin_dir_path(__FILE__) . '/php/templates/order-details.php';
+                        echo "<br><p>Recuerda que tus productos serán enviados por correo a tu domicilio si es que seleccionaste este medio de despacho y deberían estar entre 2 y 3 días hábiles a tu hogar.</p>";
                     } else {
                         /*
                          * Si este es el caso, se está intentando acceder a la página sin pasar por el ciclo regular.
