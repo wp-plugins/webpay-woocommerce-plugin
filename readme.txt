@@ -8,9 +8,9 @@ Tags:
 
 Requires at least: 3, 3.3+ and WooCommerce 1.6+
 
-Tested up to: 3.6
+Tested up to: 3.8
 
-Stable tag: 2.3
+Stable tag: 2.4.1
 
 == Description ==
 
