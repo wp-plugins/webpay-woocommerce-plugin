@@ -2,16 +2,22 @@
 
 Bienvenidos al wiki de este plugin. Espero que me ayuden a hacer que este plugin sea el mejor que se pueda encontrar como gateway de pago para WooCommerce con Webpay.
 
+Esta versión es totalmente nueva. Se modificó todo el core de Woocommerce, por lo que se tuvo que modificar todo el plugin partiendo desde 0... ( Uff ! ).
+
+Aún se están haciendo cambios debido a que los chicos de soporte de webpay no se ponen de acuerdo entre ellos y han hecho cambios en la certificación que no aparecen en el manual.
+
 Siempre puedes encontrar la última versión estable por el buscador de plugins de wordpress.
 * http://wordpress.org/plugins/webpay-woocommerce-plugin/
-* 
+
+##Problemas Conocidos.
+* Ninguno por el momento ( desde versión v3.0.5 )
 
 ##Estado del Arte
 
-Este plugin funciona con las últimas versiones de woocommerce. (Version 2.0.12)
+* Este plugin funciona con las últimas versiones de woocommerce. (Version 2.1.*)
+* Este plugin ya no funciona con las versiones anteriores de Woocommerce.
 
 ## Descarga
-
 
 Si quieres editarlo recomiendo descargarlo con git:
 
@@ -25,6 +31,8 @@ Siempre se puede obtener y descargar la última versión de esta página o del s
 ```
 https://bitbucket.org/ctala/woocommerce-webpay/get/master.zip
 ```
+
+Todos los cambios y mejoras se hacen en la rama "devel" hasta ser estables.
  
 ## DEBUG MODE
 Si tienes habilitado en tu instalación de Wordpress el modo debug, el plugin creará mensaje dependiendo de donde se encuentre en el código de manera bien detallada.
@@ -65,9 +73,15 @@ Una ves descargado el plugin hay dos cosas que tienes que tener en consideració
 
 3. Debes de tener configurado los archivos CGI de WebPay. El plugin te preguntará por esta información dentro de la configuración. ( Woocommerce -> Settings -> Paymente Gateways -> Webpay Gateway).
 
-4. La página usada por HTML_TR_NORMAL = http://DIRECCIONDETUPAGINA/?page_id=xt_compra&pay=webpay&wc-api=WC_Webpay
+4. La página usada por HTML_TR_NORMAL = http://DIRECCIONDETUPAGINA/?wc-api=WC_Gateway_Webpayplus&xt_compra
 
-5. Es necesario cambiar en la página de recepción del pedido [woocommerce-thankyou] por [webpay-thankyou]. 
+5. Es necesario crear una página en blanco con el shortcode [webpay_thankyou] al cual será redireccionada la transacción. 
+
+6. Es necesario modificar la configuración bajo WooCommerce -> Ajustes -> Finalizar Compra -> WebPayPlus.
+
+7. Para que el plugin funcione los valores de la dirección del cgi, check path y return page deben de ser correctas. Los otros valores son estéticos y pedidos por parte de Transbank.
+
+8. Es posible que debas agregar el guion " - " a la WhiteList de transbank para que no tire error de conexión.
 
 # Ejemplo **tbk_config.dat**. #
 
@@ -83,7 +97,7 @@ PARAMVERIFCOM = 1
 URLCGICOM = http://DIRECCIONDETUPAGINA/cgi-bin/tbk_bp_resultado.cgi
 SERVERCOM = TUIP
 PORTCOM = 80
-WHITELISTCOM = ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz 0123456789./:=&?_
+WHITELISTCOM = ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz 0123456789./:=&?_-
 HOST = TUIP
 WPORT = 80
 URLCGITRA = /filtroUnificado/bp_revision.cgi
@@ -91,10 +105,16 @@ URLCGIMEDTRA = /filtroUnificado/bp_validacion.cgi
 SERVERTRA = https://certificacion.webpay.cl
 PORTTRA = 6443
 PREFIJO_CONF_TR = HTML_
-HTML_TR_NORMAL =  http://DIRECCIONDETUPAGINA/?page_id=xt_compra&pay=webpay&wc-api=WC_Webpay
+HTML_TR_NORMAL =  http://DIRECCIONDETUPAGINA/?wc-api=WC_Gateway_Webpayplus&xt_compra
 
 ```
 #CHANGELOG
+* V3.0.5 : Se arregla problema con los permalinks.
+* V3.0.4 : Se agrega la palabra débito al mensaje de error. Se agrega el nombre del cliente a la tabla de información extra de la transacción.
+* V3.0.3 : Se elimina mensaje de contacto al banco en caso de error, Se elimina la información extra en caso de failure.
+* V3.0.2 : Se agregan las políticas de devoluciones, Se elimina frase repetida en fracaso
+* V3.0.1 : Se agrega al mail de administrador y cliente el método de pago cuando es WebPayPlus.
+* V3.0.0 : Remake del plugin para compatibilidad con WooCommerce 2.1.*
 * V2.4.1 : Arreglada la redirección con algunas versiones de php, en especial para hostgator.
 * V2.4 : Versión Certificada. Ahora no se deberían requerir modificaciones para pasar las certificaciones de transbank.
 * V2.3 : Se agregan los templates para los pagos con webpay.

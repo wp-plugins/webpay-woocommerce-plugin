@@ -6,11 +6,11 @@ Contributors: Cristian Tala S.
 
 Tags: 
 
-Requires at least: 3, 3.3+ and WooCommerce 1.6+
+Requires at least: 3, 3.3+ and WooCommerce 2.1.1+
 
-Tested up to: 3.8
+Tested up to: 3.9
 
-Stable tag: 2.4.1
+Stable tag: 3.0.5
 
 == Description ==
 
@@ -26,7 +26,8 @@ Algunos de ustedes se preguntarán el por qué no cobro por este plugin, tomando
 A considerar :
 
 *El Código se distribuye bajo GPLV3.
-*Este código YA es compatible con la última versión de WooCommerce (Version > 2.0.12)
+*Este código YA es compatible con la última versión de WooCommerce (Version > 2.1.12)
+*La última versión de este código, no es compatible con las versiones antiguas de woocommerce ( < 2.1.1 )
 *El código no presenta garantía de ningún tipo.
 *Se puso a disposición un Wiki para la instalación
 *Se puso a disposición un BugTracker para que podamos ver los problemas que vayan saliendo en conjunto.
@@ -34,9 +35,33 @@ A considerar :
 *Si necesitan los CGI de Transbank los pueden descargar de : https://bitbucket.org/ctala/webpayconector. Ya deberían estar listos para usarlos. Con estos parto para generar un eCommerce.
 *Para los que quieren mejorar el código, y nunca han ocupado una herramienta de control de versiones, les recomiendo que lean sobre GIT, además de lo que es un FORK.
 
-Recuerden cambiar el shortcode de [woocommerce-thankyou] por [webpay-thankyou] cuando corresponda.
+
 
 == Changelog ==
+
+= 3.0.5 =
+* Se arregla bug con los permalinks.
+
+= 3.0.4 =
+* Se agregan los datos del cliente en la información extra de la transacción.
+* Se modifica el mensaje de error para agregar débito y crédito.
+
+= 3.0.3 =
+* Se elimina mensaje de contacto al banco en caso de error.
+* Se elimina la información extra en caso de failure.
+
+= 3.0.2 =
+
+* Se agregan las políticas de devoluciones.
+* Se elimina frase repetida en fracaso
+
+= 3.0.1 =
+
+Se agrega al mail de administrador y cliente el método de pago cuando es WebPayPlus.
+
+= 3.0 =
+
+ReMake del plugin para compatibilidad de WooCommerce 2.1
 
 = 2.4 = 
 
@@ -94,4 +119,3 @@ Ahora la carpeta común estará bajo uploadas para que no se borre al actualizar
 
 = 2.1 =
 Added the eCommerce Variables.
-

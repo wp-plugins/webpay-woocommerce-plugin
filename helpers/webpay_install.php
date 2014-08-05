@@ -13,7 +13,7 @@ $webpay_table_name = $wpdb->prefix . "webpay";
 global $webpay_comun_folder;
 $webpay_comun_folder = WP_CONTENT_DIR.DIRECTORY_SEPARATOR."uploads".DIRECTORY_SEPARATOR."webpay-comun";
 
-function webpay_install() {
+function webpayplus_install() {
     global $wpdb;
     global $webpay_db_version;
     global $webpay_table_name;
