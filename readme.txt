@@ -10,7 +10,7 @@ Requires at least: 3, 3.3+ and WooCommerce 2.1.1+
 
 Tested up to: 3.9
 
-Stable tag: 3.0.5
+Stable tag: 3.0.5.1
 
 == Description ==
 
