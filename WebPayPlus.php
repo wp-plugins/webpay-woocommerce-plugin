@@ -3,7 +3,7 @@
   Plugin Name: WooCommerce WebpayPlus Chile
   Description: - REMAKE -  Sistema de pagos de tarjetas de crédito y débito para WooCommerce con WebPayPlus
   Author: Cristian Tala Sánchez
-  Version: 3.0.5-DEVEL
+  Version: 3.0.5
   Author URI: www.cristiantala.cl
   Plugin URI: https://bitbucket.org/ctala/woocommerce-webpay/wiki/Home
   This program is free software: you can redistribute it and/or modify
