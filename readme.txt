@@ -10,7 +10,7 @@ Requires at least: 3, 3.3+ and WooCommerce 2.1.1+
 
 Tested up to: 3.9
 
-Stable tag: 3.0.5.1
+Stable tag: 3.5.4.0
 
 == Description ==
 
@@ -38,6 +38,13 @@ A considerar :
 
 
 == Changelog ==
+
+
+= 3.5.4.0 =
+
+* Se cambia el sistema de tags a : Version.Año.Mes.Fix
+* Ya no se carga el plugin si woocommerce no está cargado.
+* Ya no se carga el método de debug si este ya existe. Esto pasaba si tenían varios plugins mios.
 
 = 3.0.5 =
 * Se arregla bug con los permalinks.

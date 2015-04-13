@@ -1,9 +1,9 @@
 <?php
 /*
   Plugin Name: WooCommerce WebpayPlus Chile
-  Description: - REMAKE -  Sistema de pagos de tarjetas de crédito y débito para WooCommerce con WebPayPlus
+  Description: Sistema de pagos de tarjetas de crédito y débito para WooCommerce con WebPayPlus
   Author: Cristian Tala Sánchez
-  Version: 3.0.5.1
+  Version: 3.5.4.0
   Author URI: www.cristiantala.cl
   Plugin URI: https://bitbucket.org/ctala/woocommerce-webpay/wiki/Home
   This program is free software: you can redistribute it and/or modify
@@ -17,6 +17,18 @@
 
   You should have received a copy of the GNU General Public License
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+  Copyright 2011-2014 Cristian Tala Sánchez
+  Si estás leyendo esta parte existe la posibilidad de que quieras modificar
+  incluso vender este código. Solo quiero aclarar que estás en todo el derecho
+  de hacerlo, sin embargo, no incluir el autor original del código es una
+  infracción a la licencia GPLv3 y se pueden realizar acciones legales para
+  quienes recurran en este acto.
+  Por mi parte llevo años trabajando en este código no para hacerme millonario,
+  si no, para ayudar a la comunidad y un poco de reconocimiento no le hace mal a
+  nadie. En resumen no seas cagado y copiando y pegando  un código que no te pertenece
+  sin dar las referencias necesarias.
+
  */
 
 include_once 'helpers/webpay_debug.php';
@@ -61,6 +73,15 @@ function webpayThankYou() {
     log_me("Saliendo al ThankYouPage");
 }
 
+// change municipio to region ****
+add_filter('gettext', 'translate_text');
+add_filter('ngettext', 'translate_text');
+
+function translate_text($translated) {
+    $translated = str_ireplace('Municipio', 'Región', $translated);
+    return $translated;
+}
+
 /*
  * Esta función solo agregará información de webpayplus al email si la orden corresponde a webpayplus.
  */
@@ -78,6 +99,11 @@ function webpayplus_email_data($order) {
 }
 
 function init_webpayplus_class() {
+    /*
+     * Arregla el problema que sucede cuando WooCommerce se actualiza y no se activa automáticamente.
+     */
+    if (!class_exists('WC_Payment_Gateway'))
+        return;
 
     class WC_Gateway_Webpayplus extends WC_Payment_Gateway {
 
@@ -98,8 +124,11 @@ function init_webpayplus_class() {
             $this->method_description .= __('<br><h4>Instrucciones</h4>');
 
             $this->method_description .= __('<ol><li>Completar la Información a continuación</li>'
-                    . '<li>En la configuración de los CGI usar la siguiente URL <b><i>' . $this->notify_url . ' </b></i></li>'
-                    . '<li>Si existiera un error de conexión es debido al tamaño del _POST. Se pueden modificar los archivos de configuración de transbank para que acepten más datos.</li></ol>');
+                    . '<li>En la configuración de los CGI usar la siguiente URL <b><i>' . $this->notify_url . '&xt_compra  </b></i></li>'
+                    . '<li>Si existiera un error de conexión es debido al tamaño del _POST. Se pueden modificar los archivos de configuración de transbank para que acepten más datos.</li>'
+                    . '<li>Agregar al WhiteList el guión en el tbk_config.dat</li>'
+                    . '</ol>'
+                    . '<h3>Las instrucciones detalladas las puedes contrar en : <a href="https://bitbucket.org/ctala/woocommerce-webpay">https://bitbucket.org/ctala/woocommerce-webpay</a></h3>');
 
 
 

@@ -131,3 +131,28 @@ Y eso debería ser todo por ahora.
 
 
 Have fun!
+
+# CopyRight #
+
+  Copyright 2011-2014 Cristian Tala Sánchez
+  Si estás leyendo esta parte existe la posibilidad de que quieras modificar
+  incluso vender este codigo. Solo quiero aclarar que estás en todo el derecho
+  de hacerlo, sin embargo, no incluir el autor original del codigo es una 
+  infracción a la licencia GPLv3 y se pueden realizar acciones legales para 
+  quienes recurran en este acto.
+  Por mi parte llevo años trabajando en este codigo no para hacerme millonario,
+  si no, para ayudar a la comunidad y un poco de reconocimiento no le hace mal a 
+  nadie. En resumen no seas cagado y copies, pegues un codigo que no te pertenece
+  sin dar las referencias necesarias.
+
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License or any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
