@@ -10,7 +10,7 @@ Siempre puedes encontrar la última versión estable por el buscador de plugins 
 * http://wordpress.org/plugins/webpay-woocommerce-plugin/
 
 ##Problemas Conocidos.
-* Ninguno por el momento ( desde versión v3.0.5 )
+* Ninguno por el momento ( desde versión v3.5.7 )
 
 ##Estado del Arte
 
@@ -109,6 +109,10 @@ HTML_TR_NORMAL =  http://DIRECCIONDETUPAGINA/?wc-api=WC_Gateway_Webpayplus&xt_co
 
 ```
 #CHANGELOG
+* V3.5.7.1 : Se arregla bug con el logo.
+* V3.5.7.0 : Se agregan más validaciones al monto de la transacción.
+* V3.5.4.1 : Se cambia la palabra Fracasada por Rechazada en la página de fracaso.
+* V3.5.4.0 : Se cambia el formato de versiones. Se arregla pantalla blanca al actualizar woocommerce.
 * V3.0.5 : Se arregla problema con los permalinks.
 * V3.0.4 : Se agrega la palabra débito al mensaje de error. Se agrega el nombre del cliente a la tabla de información extra de la transacción.
 * V3.0.3 : Se elimina mensaje de contacto al banco en caso de error, Se elimina la información extra en caso de failure.

@@ -8,15 +8,17 @@ Tags:
 
 Requires at least: 3, 3.3+ and WooCommerce 2.1.1+
 
-Tested up to: 3.9
+Tested up to: 4.2.2
 
-Stable tag: 3.5.4.0
+Stable tag: 3.5.7.1
 
 == Description ==
 
 This plugin enables to pay with webpay plus ( Chile ) in Woocommerce 
 
 Wiki Home : https://bitbucket.org/ctala/woocommerce-webpay/wiki/Home
+
+Más información sovre webpay  : https://www.cristiantala.cl/tag/webpay/
 
 Ya ha sido bastante tiempo en el que me han preguntado por esto en los comentarios y al fin decidí liberar el código de manera OpenSource.
 
@@ -39,12 +41,13 @@ A considerar :
 
 == Changelog ==
 
+= V3.5.7.0 =
+Se agregan más validaciones al monto de la transacción.
+= V3.5.4.1 =
+ Se cambia la palabra Fracasada por Rechazada en la página de fracaso.
+= V3.5.4.0 =
+ Se cambia el formato de versiones. Se arregla pantalla blanca al actualizar woocommerce.
 
-= 3.5.4.0 =
-
-* Se cambia el sistema de tags a : Version.Año.Mes.Fix
-* Ya no se carga el plugin si woocommerce no está cargado.
-* Ya no se carga el método de debug si este ya existe. Esto pasaba si tenían varios plugins mios.
 
 = 3.0.5 =
 * Se arregla bug con los permalinks.
